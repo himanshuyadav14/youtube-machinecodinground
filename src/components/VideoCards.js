@@ -15,4 +15,12 @@ const VideoCards = ({ data }) => {
   );
 };
 
+export const AdVideoCard = ({data}) => {
+  return (
+    <div className="p-1 m-1 border border-red-400">
+      <VideoCards data={data}/>
+    </div>
+  );
+};
+
 export default VideoCards;
