@@ -1,0 +1,18 @@
+<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  viewBox="0 0 600 600" 
+  fill="none"
+>
+  <title>Abstract user icon</title>
+  <defs>
+    <clipPath id="circular-border">
+      <circle cx="300" cy="300" r="250" />
+    </clipPath>
+  </defs>
+  <!-- Outer circle (black) -->
+  <circle cx="300" cy="300" r="280" fill="black" />
+  <!-- Inner circle (white) -->
+  <circle cx="300" cy="230" r="100" fill="white" />
+  <!-- Clipped lower circle (white) -->
+  <circle cx="300" cy="550" r="190" fill="white" clip-path="url(#circular-border)" />
+</svg>
