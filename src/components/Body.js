@@ -1,11 +1,12 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import Maincontent from "./Maincontent";
+
 const Body = () => {
   return (
     <div className="flex">
-      <Sidebar/>
-      <Maincontent />
+      <Sidebar />
+      <Outlet />
     </div>
   );
 };

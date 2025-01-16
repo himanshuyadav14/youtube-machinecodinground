@@ -1,14 +1,14 @@
-import React from 'react'
-import ButtonList from "./ButtonList.js"
-import VideoContent from "./VideoContent"
+import React from "react";
+import ButtonList from "./ButtonList.js";
+import VideoContent from "./VideoContent";
 
 const Maincontent = () => {
   return (
     <div className="">
-        <ButtonList/>
-        <VideoContent/>
+      <ButtonList />
+      <VideoContent />
     </div>
-  )
-}
+  );
+};
 
-export default Maincontent
+export default Maincontent;
