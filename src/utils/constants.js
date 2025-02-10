@@ -5,3 +5,5 @@ export const YOUTUBE_VIDEOS_API =
   GOOGLE_API_KEY;
 export const YOUTUBE_SEARCH_API =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+export const YOUTUBE_CHANNEL_API = "https://www.googleapis.com/youtube/v3/channels?part=snippet&key=" + GOOGLE_API_KEY;
