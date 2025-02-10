@@ -38,7 +38,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex items-center justify-between p-3 shadow-md bg-white ">
+    <div className="flex items-center justify-between p-3 shadow-md bg-white">
       {/* Left Section: Hamburger & Logo */}
       <div className="flex items-center gap-4">
         <button

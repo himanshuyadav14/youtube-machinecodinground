@@ -4,9 +4,13 @@ import Sidebar from "./Sidebar";
 
 const Body = () => {
   return (
-    <div className="flex">
-      <Sidebar />
-      <Outlet />
+    <div className="flex h-screen">
+      {/* Sidebar (Sticky) */}
+        <Sidebar />
+
+      <div className="flex-1 overflow-y-auto h-screen w-full">
+        <Outlet />
+      </div>
     </div>
   );
 };

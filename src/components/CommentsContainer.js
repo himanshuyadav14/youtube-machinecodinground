@@ -1,5 +1,6 @@
 import React from "react";
 
+// Sample comments data (nested)
 const commentsData = [
   {
     name: "Alice Johnson",
@@ -51,50 +52,40 @@ const commentsData = [
       },
     ],
   },
-  {
-    name: "Helen Carter",
-    text: "The formatting of the article could use some improvement.",
-    replies: [],
-  },
-  {
-    name: "Ian Black",
-    text: "Loved the visuals in the article! They really helped explain the concepts.",
-    replies: [
-      {
-        name: "Jack White",
-        text: "Same here! The diagrams were top-notch.",
-        replies: [
-          {
-            name: "Ian Black",
-            text: "I wonder if the author used any specific software for them.",
-            replies: [],
-          },
-        ],
-      },
-    ],
-  },
 ];
 
+// Generate a random avatar color
+const getAvatarColor = (name) => {
+  const colors = ["bg-blue-500", "bg-green-500", "bg-red-500", "bg-yellow-500", "bg-purple-500"];
+  const index = name.charCodeAt(0) % colors.length;
+  return colors[index];
+};
+
+// Individual Comment Component
 const Comment = ({ data }) => {
   const { name, text } = data;
+  const avatarColor = getAvatarColor(name);
+
   return (
-    <div className="flex items-start shadow-md bg-white p-4 rounded-lg mt-3">
-      <img
-        className="w-10 h-10 rounded-full"
-        src="https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg"
-        alt="user-avatar"
-      />
-      <div className="ml-4">
-        <p className="font-bold text-blue-600">{name}</p>
+    <div className="flex items-start gap-4 py-3">
+      {/* Circular Avatar with Initial */}
+      <div className={`w-10 h-10 flex items-center justify-center rounded-full text-white font-semibold ${avatarColor}`}>
+        {name[0]}
+      </div>
+      
+      {/* Comment Content */}
+      <div className="bg-white shadow-sm p-3 rounded-lg w-full">
+        <p className="font-semibold text-gray-800">{name}</p>
         <p className="text-gray-700 mt-1">{text}</p>
       </div>
     </div>
   );
 };
 
+// Recursive Comment List Component
 const CommentsList = ({ comments }) => {
   return comments.map((comment, index) => (
-    <div key={index} className="pl-6 border-l-2 border-gray-300 mt-3">
+    <div key={index} className="pl-5 border-l-2 border-gray-300">
       <Comment data={comment} />
       {comment.replies && comment.replies.length > 0 && (
         <div className="ml-6">
@@ -105,10 +96,11 @@ const CommentsList = ({ comments }) => {
   ));
 };
 
+// Comments Container Component
 const CommentsContainer = () => {
   return (
     <div className="m-5 p-5 bg-gray-100 rounded-lg shadow-lg">
-      <h1 className="text-3xl font-bold text-gray-800 mb-5">Comments</h1>
+      <h1 className="text-2xl font-bold text-gray-800 mb-5">Comments</h1>
       <CommentsList comments={commentsData} />
     </div>
   );
